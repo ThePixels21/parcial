@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Size;
 
 public class Empleado {
     @NotEmpty
+    @Size(min=4, max=20)
     private String id;
     @NotEmpty
     private String nombre;

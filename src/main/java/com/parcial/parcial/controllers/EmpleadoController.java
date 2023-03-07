@@ -14,7 +14,7 @@ public class EmpleadoController {
     @GetMapping({"/", ""})
     public String formulario(Model model) {
         model.addAttribute("titulo", "Formulario");
-        model.addAttribute("empelado", new Empleado());
+        model.addAttribute("empleado", new Empleado());
         return "empleado/index";
     }
 }

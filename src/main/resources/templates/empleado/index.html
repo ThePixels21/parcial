@@ -7,6 +7,27 @@
     <title th:text="${titulo}"></title>
 </head>
 <body>
-    
+    <h1 th:text="${titulo}"></h1>
+    <form th:action="@{/form}" method="post" th:object="${empleado}">
+        <label for="id">Id</label>
+        <input type="number" th:field="*{id}" id="id" name="id">
+        <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+        <label for="nombre">Nombre</label>
+        <input type="text" th:field="*{nombre}" id="nombre" name="nombre">
+        <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+        <label for="apellido">Apellido</label>
+        <input type="text" th:field="*{apellido}" id="apellido" name="apellido">
+        <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></span>
+        <label for="correo">Correo</label>
+        <input type="email" th:field="*{correo}" id="correo" name="correo">
+        <span th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></span>
+        <label for="direccion">Direccion</label>
+        <input type="text" th:field="*{direccion}" id="direccion" name="direccion">
+        <span th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></span>
+        <label for="telefono">Telefono</label>
+        <input type="number" th:field="*{telefono}" id="telefono" name="telefono">
+        <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
